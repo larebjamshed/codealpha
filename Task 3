@@ -1,4 +1,4 @@
-[3:52 pm, 07/10/2024] Lareb Jamshed: <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -23,7 +23,7 @@
 <script src="script.js"></script>
 </body>
 </html>
-[3:52 pm, 07/10/2024] Lareb Jamshed: body {
+ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     display: flex;
@@ -62,8 +62,7 @@ button:hover {
 
 input[type="range"] {
     width: 100px;
-}
-[3:53 pm, 07/10/2024] Lareb Jamshed: let audioPlayer = document.getElementById('audioPlayer');
+} let audioPlayer = document.getElementById('audioPlayer');
 
 function playSong() {
     audioPlayer.play();
