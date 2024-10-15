@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="gallery-container">
+    <button class="prev" onclick="prevImage()">&#10094;</button>
+    
+    <img id="galleryImage" src="image1.jpg" alt="Image 1">
+    
+    <button class="next" onclick="nextImage()">&#10095;</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+[4:41 pm, 07/10/2024] Lareb Jamshed: body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+.gallery-container {
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+[4:42 pm, 07/10/2024] Lareb Jamshed: let currentIndex = 0;
+
+const images = [
+    "image1.jpg",
+    "image2.jpg",
+    "image3.jpg",
+    "image4.jpg"
+];
+
+function showImage(index) {
+    const galleryImage = document.getElementById('galleryImage');
+    galleryImage.src = images[index];
+}
+
+function nextImage() {
+    currentIndex = (currentIndex + 1) % images.length; // Loop to the beginning
+    showImage(currentIndex);
+}
+
+function prevImage() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length; // Loop to the end
+    showImage(currentIndex);
+}
